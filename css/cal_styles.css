@@ -1,0 +1,106 @@
+* {box-sizing: border-box;}
+
+body {
+	background-image: url("../img/brick.jpg");
+}
+
+#calculator {
+	width: 325px;
+	height: auto;
+	margin: 175px auto;
+	padding: 20px 20px 15px;
+	background: rgba(41, 89, 123, 0.84);
+	border-radius: 5px;
+	box-shadow: 0 4px #a23c56, 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.screen {
+	height: 55px;
+	width: 100%;
+	float: right;
+	margin-bottom: 10px;
+	padding: 0 10px;
+	background: rgba(182, 194, 204, 1);
+	border-radius: 3px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.3);
+	font-size: 2em;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+.keys, .top {
+	overflow: hidden;
+	display: inline-block;
+}
+
+.keys span, .top span.clear {
+	float: left;
+	position: relative;
+	top: 0;
+	cursor: crosshair;
+	width: 66px;
+	height: 36px;
+	background: white;
+	border-radius: 3px;
+	box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+	margin: 0 7px 11px 0;
+	color: #333;
+	line-height: 36px;
+	text-align: center;
+	user-select: none;
+	transition: all 0.3s ease;
+}
+
+.keys span.operator {
+	background: #b6c2cc;
+    margin-right: 0;
+}
+ 
+.keys span.eval {
+	background: #d3545d;
+    box-shadow: 0 4px #71353a;
+    color: #222;
+}
+ 
+.top span.clear {
+	float: left;
+    background: #d3545d;
+    box-shadow: 0 4px #71353a;
+}
+ 
+.keys span:hover {
+    background: #355165;
+    box-shadow: 0 4px #b6c2cc;
+    color: white;
+}
+
+.keys span.eval:hover {
+    background: #b7242f;
+    box-shadow: 0 4px #d3545d;
+    color: #fff;
+}
+ 
+.top span.clear:hover {
+    background: #b7242f;
+    box-shadow: 0 4px #d3545d;
+    color: white;
+}
+
+.keys span:active {
+    top: 4px;
+    text-decoration: underline;
+}
+ 
+.keys span.eval:active {
+    top: 4px;
+    text-decoration: underline;
+}
+ 
+.top span.clear:active {
+    top: 4px;
+    text-decoration: underline;
+}
+ 

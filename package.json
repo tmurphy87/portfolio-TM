@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Tiffany Murphy Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmurphy87/Portfolio-TM.git"
+  },
+  "author": "Tiffany Murphy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmurphy87/Portfolio-TM/issues"
+  },
+  "homepage": "https://github.com/tmurphy87/Portfolio-TM#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}

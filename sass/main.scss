@@ -1,0 +1,489 @@
+$color-primary: #f1f0ee;
+$color-light-grey: #777;
+$color-black: #000;
+$color-white: #fff;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+    background-color: $color-primary;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-light-grey;
+    padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+/*NAV BAR*/
+.anchor {
+  padding-top: 6rem;
+}
+
+.navbar {
+  background-color: #282c35;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #f5f5f5;
+  &:hover {
+    color: #ce9e62;
+    text-decoration: none;
+    -webkit-transition: color .3s;
+  }
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding: 2rem 1.9rem 2rem;
+  letter-spacing: 0.10em;
+  text-decoration: none;
+  a {
+    color: #f5f5f5;
+    &:hover {
+      color: #ce9e62;
+      text-decoration: none;
+    }
+  }
+}
+
+/**** INDEX SECTION ****/
+
+.header {
+    height: 100vh;
+    background-image: linear-gradient(
+        to right, 
+       rgba(37, 37, 35, 0.85) 0%,
+       rgba(253, 242, 218, 0.7) 100%), 
+    url(../img/hero1.jpg);
+    background-size: cover;
+    background-position: bottom;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    }
+
+    &__logo {
+    height: 3.5rem;
+    }
+
+    &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+}
+
+.heading-primary {
+    color: $color-white;
+    text-shadow: 0 .5rem .5rem rgba(1,1,1,.4);
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 4rem;
+
+    &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation: moveInLeft 1s ease-out;
+    }
+
+    &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .85rem;
+    padding: 1.5rem;
+    animation: moveInRight 1s ease-out;
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    80% {
+        transform: translateY(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+}
+
+.btn:acitve {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+}
+
+.btn--white {
+    background-color: $color-white;
+    color: $color-light-grey;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn--white::after {
+    background-color: $color-white;
+    color: $color-light-grey;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+/*#home {
+    padding: 50px;   
+}
+
+.carousel-caption h3 {
+    display: inline-block;
+    top: 70%;
+}*/
+
+/**** PORTFOLIO ***/
+.btn--details {
+  color: $color-white;
+  background-color: #c1432e;
+  border-color: #282c35;
+}
+
+/**** WORK ****/
+
+/*portfolio img grid*/
+.work-img {
+    display: block;
+    margin: auto;
+    max-width: 40rem;
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Fredericka the Great';
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    line-height: 1.6;
+    background: rgba($color-black,0.5);
+    color: white;
+    height: 20rem;
+    width: 30rem;
+    display: none;
+    /*opacity: 0;*/
+}
+
+.proj-title {
+    font-weight: 100;
+}
+
+/*calculator*/
+#work2 img {
+    border: 2rem solid $color-white;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
+    margin: 0 auto;
+}
+ 
+#work2 h4 {
+    margin: 0 auto;
+    width: 50%;
+    padding: 2%;
+    text-align: center;
+}
+
+/**** ABOUT SECTION ****/
+
+#tm {
+    filter: drop-shadow(.2rem .2rem .6rem rgba($color-black,0.5))saturate(1.2);
+    border-radius: 1.5rem;
+    opacity: 0.85;
+}
+
+.about h1 {
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.circle {
+    text-align: center;
+    /*width: 275px;
+    height: 275px;
+    padding: 50px;*/
+}
+
+.main-text {
+    position: relative;
+    clear: both;
+    padding-top: 5%;
+}
+
+.main-text p {
+    font-size: 1.3em;
+}
+
+.skills {
+    display: inline-block;
+    /*-webkit-border-radius: 55%;
+    border-radius: 55%;
+    padding: 50px; 
+    background-color: rgba(127, 127, 127, 1);*/
+    color: #FFF;
+}
+
+.skills h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#skill-list {
+    font-size: 1.5em;
+}
+
+/**** CONTACT SECTION ****/
+#contact {
+    background-image: url("../img/contact.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 7%;
+    height: 100%;
+    color: white;
+}
+
+#map {
+    height: 30rem;
+    width: 100%;
+}
+
+.bg-font {
+    display: inline-block;
+    padding: 0 .5rem;
+}
+
+.p-font:hover {
+    color: #a94442;
+}
+
+#contact-form {
+    resize: none;
+    color: $color-white;
+}
+
+#bttn-submit {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: #c1432e;
+    color: $color-white;
+}
+
+/**** LEARN MORE SECTION ****/
+#faq {
+    padding: 10rem 0;
+}
+
+.learn-more {
+    padding-left: 1.5rem; 
+    text-align: left;
+    float: left;
+}
+
+.modal-button {
+    padding: 1.5rem;
+    float: right;
+}
+
+#modalembed {
+    height: 50rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.panel-default>.panel-heading {
+    background-color: rgba(157, 157, 157, 0.75);
+    border-style: none;
+}
+
+/**** Footer Bar ****/
+
+/* Sticky-Footer */
+.site-footer {
+    position: fixed; 
+    left: 0; 
+    bottom: 0; 
+    width: 100%;
+}
+
+.bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-top: 1.5rem;
+    width: 100%;
+    color: white;
+    background-color: #282c35;
+}
+
+.footer-element {
+    display: inline-block;
+    float: right;
+    padding: 0 .5rem;
+}
+
+/*Typography*/
+.navbar li a,
+h1,
+h2,
+h3,
+h4,
+.panel-title {
+    font-family: 'Armata', Helvetica, Arial, sans-serif;
+}
+
+.navbar-brand a {
+    font-family: 'Shadows Into Light', sans-serif;
+    text-decoration: none;
+}
+
+/*.carousel-caption h3, 
+h3 {
+    font-family: 'Fredericka the Great', cursive, Georgia, serif;
+    text-shadow: 0 4px 4px rgb(0, 1, 6);
+}*/
+
+/*.carousel-caption p {
+    font-family: 'Josefin Slab', Georgia, serif;
+    text-shadow: 0 4px 4px rgb(0, 1, 6);
+}*/
+
+.panel-body,
+.carousel-caption p,
+p {
+    font-family: 'Gentium Basic', Georgia, serif;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.intro p {
+    font-family: 'Caveat', Helvetica, Arial, sans-serif, cursive;
+    font-size: 2rem;
+    font-weight: 100;
+    -webkit-margin-before: 0;
+}
+
+h3 {
+    color: $color-white;
+    text-shadow: 0 .4rem .4rem rgb(0, 1, 6);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px){
+
+/**** Body ****/    
+.anchor {padding: 1rem;}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 0;
+}
+
+/**** Projects ****/  
+#work1 {width: 90%;} 
+ 
+#work2 { 
+    margin-top: 7%; 
+    width: 90%;
+}
+
+/**** Footer ****/
+#github {display: none;}    
+}
