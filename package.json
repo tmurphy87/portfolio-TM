@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tmurphy87/Portfolio-TM.git"
+    "url": "git+https://github.com/tmurphy87/portfolio-TM.git"
   },
   "author": "Tiffany Murphy",
   "license": "ISC",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/tmurphy87/Portfolio-TM#readme",
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.9.0"
   }
 }

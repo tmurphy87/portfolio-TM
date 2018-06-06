@@ -24,7 +24,7 @@ body {
     box-sizing: border-box;
 }
 
-/*NAV BAR*/
+//NAV BAR
 .anchor {
   padding-top: 6rem;
 }
@@ -56,7 +56,7 @@ body {
   }
 }
 
-/**** INDEX SECTION ****/
+//INDEX SECTION
 
 .header {
     height: 100vh;
@@ -162,8 +162,8 @@ body {
     }
 }
 
-.btn:link,
-.btn:visited {
+.btn {
+  &:link, &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -171,24 +171,31 @@ body {
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
-}
-
-.btn:hover {
+  }
+  &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black,.2);
-}
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
-.btn:acitve {
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:acitve {
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
-}
-
-.btn--white {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+  &--white {
     background-color: $color-white;
     color: $color-light-grey;
-}
 
-.btn::after {
+    &::after {
+      background-color: $color-white;
+      color: $color-light-grey;
+    }
+  }
+
+  &::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -199,42 +206,24 @@ body {
     left: 0;
     z-index: -1;
     transition: all .4s;
-}
+  }
 
-.btn--white::after {
-    background-color: $color-white;
-    color: $color-light-grey;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn--animated {
+  &--animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
+  }
 }
 
-/*#home {
-    padding: 50px;   
-}
-
-.carousel-caption h3 {
-    display: inline-block;
-    top: 70%;
-}*/
-
-/**** PORTFOLIO ***/
+//PORTFOLIO
 .btn--details {
   color: $color-white;
   background-color: #c1432e;
   border-color: #282c35;
 }
 
-/**** WORK ****/
+//WORK
 
-/*portfolio img grid*/
+//portfolio img grid
 .work-img {
     display: block;
     margin: auto;
@@ -263,23 +252,24 @@ body {
     font-weight: 100;
 }
 
-/*calculator*/
-#work2 img {
+//calculator
+#work2 {
+  img {
     border: 2rem solid $color-white;
     -webkit-border-radius: 5%;
     -moz-border-radius: 5%;
     border-radius: 5%;
     margin: 0 auto;
-}
- 
-#work2 h4 {
+  }
+  h4 {
     margin: 0 auto;
     width: 50%;
     padding: 2%;
     text-align: center;
+  }
 }
 
-/**** ABOUT SECTION ****/
+//ABOUT SECTION
 
 #tm {
     filter: drop-shadow(.2rem .2rem .6rem rgba($color-black,0.5))saturate(1.2);
@@ -311,11 +301,7 @@ body {
 
 .skills {
     display: inline-block;
-    /*-webkit-border-radius: 55%;
-    border-radius: 55%;
-    padding: 50px; 
-    background-color: rgba(127, 127, 127, 1);*/
-    color: #FFF;
+    color: $color-white;
 }
 
 .skills h3 {
@@ -327,7 +313,7 @@ body {
     font-size: 1.5em;
 }
 
-/**** CONTACT SECTION ****/
+//CONTACT SECTION
 #contact {
     background-image: url("../img/contact.jpg");
     background-attachment: fixed;
@@ -364,7 +350,7 @@ body {
     color: $color-white;
 }
 
-/**** LEARN MORE SECTION ****/
+//LEARN MORE
 #faq {
     padding: 10rem 0;
 }
@@ -391,9 +377,9 @@ body {
     border-style: none;
 }
 
-/**** Footer Bar ****/
+//Footer Bar
 
-/* Sticky-Footer */
+//Sticky-Footer
 .site-footer {
     position: fixed; 
     left: 0; 
@@ -417,7 +403,7 @@ body {
     padding: 0 .5rem;
 }
 
-/*Typography*/
+//Typography
 .navbar li a,
 h1,
 h2,
@@ -431,17 +417,6 @@ h4,
     font-family: 'Shadows Into Light', sans-serif;
     text-decoration: none;
 }
-
-/*.carousel-caption h3, 
-h3 {
-    font-family: 'Fredericka the Great', cursive, Georgia, serif;
-    text-shadow: 0 4px 4px rgb(0, 1, 6);
-}*/
-
-/*.carousel-caption p {
-    font-family: 'Josefin Slab', Georgia, serif;
-    text-shadow: 0 4px 4px rgb(0, 1, 6);
-}*/
 
 .panel-body,
 .carousel-caption p,
@@ -463,10 +438,10 @@ h3 {
     text-shadow: 0 .4rem .4rem rgb(0, 1, 6);
 }
 
-/* Media Queries */
+//Media Queries
 @media screen and (max-width: 768px){
 
-/**** Body ****/    
+//Body   
 .anchor {padding: 1rem;}
 
 hr {
@@ -476,7 +451,7 @@ hr {
     border-top: 0;
 }
 
-/**** Projects ****/  
+//Projects  
 #work1 {width: 90%;} 
  
 #work2 { 
@@ -484,6 +459,6 @@ hr {
     width: 90%;
 }
 
-/**** Footer ****/
+//Footer
 #github {display: none;}    
 }
